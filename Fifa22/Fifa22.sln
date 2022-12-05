@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22", "Fifa22\Fifa22.csproj", "{DE852D27-483D-4EFD-954F-52ACF97E9B56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22", "Fifa22\Fifa22.csproj", "{DE852D27-483D-4EFD-954F-52ACF97E9B56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.WebService", "Fifa22.WebService\Fifa22.WebService.csproj", "{9E4468C2-099C-4669-B3F3-4242A157FDD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Library", "Fifa22.Library\Fifa22.Library.csproj", "{E394D8DD-257E-4847-8624-08DB919ACD17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DE852D27-483D-4EFD-954F-52ACF97E9B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE852D27-483D-4EFD-954F-52ACF97E9B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE852D27-483D-4EFD-954F-52ACF97E9B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E394D8DD-257E-4847-8624-08DB919ACD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E394D8DD-257E-4847-8624-08DB919ACD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E394D8DD-257E-4847-8624-08DB919ACD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E394D8DD-257E-4847-8624-08DB919ACD17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

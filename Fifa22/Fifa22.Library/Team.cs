@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fifa22
+namespace Fifa22.Library
 {
     public class Team
     {
