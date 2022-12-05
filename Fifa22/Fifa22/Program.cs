@@ -1,8 +1,6 @@
 ﻿using Fifa22;
 using System.Data;
 
-//string[] groups1 = { "A", "B", "C", "Z" };
-//string[] groups2 = { "X", "Y", "Z", "A", "B", "K" };
 
 DataTable tableGroups = DatabaseHelper.ExecuteQuery("select distinct Team_group from Team");
 foreach (DataRow row in tableGroups.Rows)
@@ -32,4 +30,25 @@ foreach (DataRow row in tableGroups.Rows)
 //        //Console.WriteLine(t.Team_group);
 //    }
 //}
+
+
+//List<int> list = new List<int>();
+//list.Add(1);
+//list.Add(2);
+//list.Add(3);
+
+//foreach(var item in list)
+//{
+//    Console.WriteLine(item);
+//}
+//string[] groups1 = { "A", "B", "C", "Z" };
+//string[] groups2 = { "X", "Y", "Z", "A", "B", "K", "A" };
+//int[] k = { 1, 2, 3 };
+//int[] p = { 3, 4, 5 };
+//int br1 = Helper.Presek(groups1, groups2);
+//Console.WriteLine(br1);
+//br1 = Helper.Presek(groups2, groups1);
+//Console.WriteLine(br1);
+//br1 = Helper.Presek(k, p);
+//Console.WriteLine(br1);
 

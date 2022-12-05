@@ -14,25 +14,26 @@ namespace Fifa22
         public static DataTable ExecuteQuery(string query)
         {
 
-            DataTable dataTable = new DataTable();
-
-            SqlConnection conn = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
-
-            // create data adapter
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            // this will query your database and return the result to your datatable
+            DataTable dataTable = new DataTable();           
             try
             {
+                SqlConnection conn = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                // create data adapter
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                // this will query your database and return the result to your datatable
                 da.Fill(dataTable);
+                conn.Close();
+                da.Dispose();
+
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Error!");
+                Console.WriteLine($"Error! {ex.Message}");
             }
-            conn.Close();
-            da.Dispose();
+            
             return dataTable;
         }
         
