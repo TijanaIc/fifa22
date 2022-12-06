@@ -4,17 +4,6 @@ Team_name varchar(255),
 Team_group varchar(255)
 );
 
-select * from Team order by Team_group;
-
-insert into Team
-values ('Serbia', 'G');
-insert into Team
-values ('Switzerland', 'G');
-insert into Team
-values ('Cameroon', 'G');
-insert into Team
-values ('Brazil', 'G');
-
 insert into Team
 values ('Qatar', 'A');
 insert into Team
@@ -43,10 +32,48 @@ insert into Team
 values ('Mexico', 'C');
 
 insert into Team
-values (' France', 'D');
+values ('France', 'D');
 insert into Team
 values ('Australia', 'D');
 insert into Team
 values ('Denmark', 'D');
 insert into Team
-values ('unisia', 'D');
+values ('Tunisia', 'D');
+
+insert into Team
+values ('Spain', 'E');
+insert into Team
+values ('Japan', 'E');
+insert into Team
+values ('Costa Rica', 'E');
+insert into Team
+values ('Germany', 'E');
+
+insert into Team
+values ('Croatia', 'F');
+insert into Team
+values ('Morocco', 'F');
+insert into Team
+values ('Belgium', 'F');
+insert into Team
+values ('Canada', 'F');
+
+insert into Team
+values ('Serbia', 'G');
+insert into Team
+values ('Switzerland', 'G');
+insert into Team
+values ('Cameroon', 'G');
+insert into Team
+values ('Brazil', 'G');
+
+insert into Team
+values ('Portugal', 'H');
+insert into Team
+values ('Ghana', 'H');
+insert into Team
+values ('South Korea', 'H');
+insert into Team
+values ('Uruguay', 'H');
+
+select * from Team;
