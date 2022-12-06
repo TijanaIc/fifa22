@@ -49,4 +49,4 @@ values ('Australia', 'D');
 insert into Team
 values ('Denmark', 'D');
 insert into Team
-values ('unisia', 'D');
+values ('Tunisia', 'D');
