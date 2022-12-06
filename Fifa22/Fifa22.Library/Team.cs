@@ -8,8 +8,8 @@ namespace Fifa22.Library
 {
     public class Team
     {
-        public int Team_id;
-        public string Team_name;
-        public string Team_group; 
+        public int Team_id { get; set; }
+        public string Team_name { get; set; }
+        public string Team_group { get; set; }
     }
 }
