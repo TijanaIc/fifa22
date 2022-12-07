@@ -8,8 +8,7 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class TeamController : Controller
     {
-        [HttpGet]
-        [Route("list")]
+        [HttpGet("list")]
         public List<Team> Get()
         {
             List<Team> team = new List<Team>();
@@ -22,6 +21,26 @@ namespace Fifa22.WebService.Controllers
             }
             return team;
         }
-    }
+        [HttpGet("search/{groupName}")]
+        public List<Team> GetTeams(string groupName)
+        {
+            List<Team> team = new List<Team>();
+            DataTable teams = DatabaseHelper.ExecuteQuery($"select Team_name from Team where Team_group='{groupName}'");
+            foreach (DataRow teamRow in teams.Rows)
+            {
+                var t = new Team();
+                t.Team_name = teamRow["Team_name"].ToString();
+                team.Add(t);
+            }
+            return team;
+        }
+             
+        }
+
+
 }
+
+
+
+
 

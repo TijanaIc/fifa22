@@ -5,7 +5,7 @@ namespace Fifa22.Library
 {
     public class DatabaseHelper
     {
-        static string connectionString = @"Server=localhost\SQLEXPRESS;Database=Fifa22;Trusted_Connection=True;";
+        static string connectionString = @"Server=localhost;Database=Fifa22;Trusted_Connection=True;";
         public static DataTable ExecuteQuery(string query)
         {
 

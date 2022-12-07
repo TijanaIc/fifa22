@@ -8,8 +8,7 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class GroupController : ControllerBase
     {
-        [HttpGet]
-        [Route("list")]    
+        [HttpGet("list")]    
         public List<Group> Get()
         {
             List<Group> groups = new List<Group>();
