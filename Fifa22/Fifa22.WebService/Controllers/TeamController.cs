@@ -21,7 +21,7 @@ namespace Fifa22.WebService.Controllers
             }
             return team;
         }
-        [HttpGet("search/{groupName}")]
+        [HttpGet("search-by-group/{groupName}")]
         public List<Team> GetTeams(string groupName)
         {
             List<Team> team = new List<Team>();
@@ -36,10 +36,10 @@ namespace Fifa22.WebService.Controllers
             }
             return team;
         }
-        [HttpGet("searchTeam/{teamId}")]
-        public List<Team> GetTeam(int teamId)
+
+        [HttpGet("search-by-id/{teamId}")]
+        public Team GetTeam(int teamId)
         {
-            List<Team> team = new List<Team>();
             DataTable teams = DatabaseHelper.ExecuteQuery($"select * from Team where Team_id='{teamId}'");
             foreach (DataRow teamRow in teams.Rows)
             {
@@ -47,9 +47,9 @@ namespace Fifa22.WebService.Controllers
                 t.Team_name = teamRow["Team_name"].ToString();
                 t.Team_id = Convert.ToInt32(teamRow["Team_id"]);
                 t.Team_group = teamRow["Team_group"].ToString();
-                team.Add(t); 
+                return t;
             }
-            return team;
+            return null;
         }
     }
 }
