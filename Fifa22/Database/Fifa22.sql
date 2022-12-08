@@ -4,6 +4,13 @@ Team_name varchar(255),
 Team_group varchar(255)
 );
 
+create table Player(
+PlayerId int identity primary key,
+FirstName varchar(255),
+LastName varchar(255),
+TeamId int FOREIGN KEY REFERENCES Team(Team_id)
+);
+
 insert into Team
 values ('Qatar', 'A');
 insert into Team
