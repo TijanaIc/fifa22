@@ -83,4 +83,30 @@ values ('South Korea', 'H');
 insert into Team
 values ('Uruguay', 'H');
 
+
+INSERT [dbo].[Player]  VALUES (N'Kodi', N'Gaklo', 3, 4);
+INSERT [dbo].[Player]  VALUES ( N'Dejvi', N'Klasen', 1, 4)
+INSERT [dbo].[Player]  VALUES (N'Boulaye', N'Dia', 1, 3)
+INSERT [dbo].[Player]  VALUES (N'Bamba', N'Djeng', 1, 3)
+INSERT [dbo].[Player]  VALUES (N'Mohamed', N'Muntari', 1, 1)
+INSERT [dbo].[Player]  VALUES (N'Moizes', N'Kansedo', 1, 2)
+INSERT [dbo].[Player]  VALUES (N'Ismala', N'Sar', 1, 3)
+INSERT [dbo].[Player]  VALUES (N'Kalidu', N'Kulibali', 1, 3)
+INSERT [dbo].[Player]  VALUES (N'Frenki', N'Jong', 1, 4)
+INSERT [dbo].[Player]  VALUES (N'Bukajo', N'Saka', 2, 5)
+INSERT [dbo].[Player]  VALUES (N'Markus', N'Rasford', 3, 5)
+INSERT [dbo].[Player]  VALUES (N'Timoti', N'Vea', 1, 6)
+INSERT [dbo].[Player]  VALUES (N'Garet', N'Bejl', 1, 8)
+INSERT [dbo].[Player]  VALUES (N'Lionel', N'Mesi', 2, 10)
+INSERT [dbo].[Player]  VALUES (N'Salem', N'El', 2, 11)
+INSERT [dbo].[Player]  VALUES (N'Salih', N'Alsehiri', 1, 11)
+INSERT [dbo].[Player]  VALUES (N'Olivije', N'Zirn', 2, 13)
+INSERT [dbo].[Player]  VALUES (N'Adrijen', N'Rabio', 1, 13)
+INSERT [dbo].[Player]  VALUES (N'Krejt', N'Gudvin', 1, 14)
+INSERT [dbo].[Player]  VALUES (N'Ilkaj', N'Gundogan', 1, 20)
+INSERT [dbo].[Player]  VALUES (N'Ricu', N'Doan', 2, 18)
+INSERT [dbo].[Player]  VALUES (N'Alvaro', N'Morata', 3, 17)
+INSERT [dbo].[Player]  VALUES (N'Misi', N'Bat', 1, 23)
+INSERT [dbo].[Player]  VALUES (N'Bril', N'Embolo', 2, 26)
+
 select * from Team;
