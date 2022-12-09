@@ -51,9 +51,22 @@ namespace Fifa22.WebService.Controllers
             }
             return null;
         }
+        [HttpGet("search-by-goals/{top}")]
+        public List<TeamStats> GetGoalsCount(int top)
+        {
+            List<TeamStats> teamsList = new List<TeamStats>();
+            DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id,sum(GoalCount) as TeamsGoals from Player group by Teamid order by TeamsGoals desc;");
+            foreach (DataRow playerRow in teams.Rows)
+            {
+                var gt = new TeamStats();
+                gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
+                gt.GoalCount= Convert.ToInt32(playerRow["TeamsGoals"]);
+                teamsList.Add(gt);
+            }
+            return teamsList;
+        }
     }
 }
-
 
 
 
