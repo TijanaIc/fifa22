@@ -51,19 +51,39 @@ namespace Fifa22.WebService.Controllers
             }
             return null;
         }
+
         [HttpGet("search-by-goals/{top}")]
-        public List<TeamStats> GetGoalsCount(int top)
+        public List<TeamEx> GetGoalsCount(int top)
         {
-            List<TeamStats> teamsList = new List<TeamStats>();
+            List<TeamEx> teamsList = new List<TeamEx>();
             DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id,sum(GoalCount) as TeamsGoals from Player group by Teamid order by TeamsGoals desc;");
             foreach (DataRow playerRow in teams.Rows)
             {
-                var gt = new TeamStats();
+                var gt = new TeamEx();
                 gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
                 gt.GoalCount= Convert.ToInt32(playerRow["TeamsGoals"]);
                 teamsList.Add(gt);
             }
             return teamsList;
+        }
+
+        [HttpDelete("delete-by-id/{team_id}")]
+        public void DeleteTeam(int team_id)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from Player where TeamId = '{team_id}'");
+            DatabaseHelper.ExecuteQuery($"delete from Team where Team_id = '{team_id}'");
+        }
+
+        [HttpPut("update-by-id")]
+        public void UpdateTeam(Team team)
+        {
+            DatabaseHelper.ExecuteQuery($"UPDATE Team SET Team_name = '{team.Team_name}', Team_group = '{team.Team_group}' where Team_id = '{team.Team_id}'");
+        }
+
+        [HttpPost("insert")]
+        public void InsertTeam(Team team)
+        {
+            DatabaseHelper.ExecuteQuery($"INSERT INTO Team VALUES ('{team.Team_name}', '{team.Team_group}')");
         }
     }
 }

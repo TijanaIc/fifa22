@@ -1,6 +1,7 @@
 ﻿using Fifa22.Library;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Numerics;
 
 namespace Fifa22.WebService.Controllers
 {
@@ -60,6 +61,33 @@ namespace Fifa22.WebService.Controllers
                 player.Add(p);
             }
             return player;
+        }
+        [HttpGet("search-by-players-with-goals")]
+        public List<PlayerEx> GetAllPlayersWithGoals()
+        {
+            var result = new List<PlayerEx>();
+            var table = DatabaseHelper.ExecuteQuery($"SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id;");
+
+            foreach (DataRow row in table.Rows)
+            {
+                var t = new PlayerEx();
+                //p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
+                t.FirstName = row["FirstName"].ToString();
+                t.LastName = row["LastName"].ToString();
+                t.Team_name = row["Team_name"].ToString();
+                t.Team_group = row["Team_group"].ToString();
+                //p.GoalCount = Convert.ToInt32(playerRow["GoalCount"]);
+                //p.TeamId = Convert.ToInt32(playerRow["TeamId"]);
+                result.Add(t);               
+            }
+
+            return result;
+        }
+
+        [HttpDelete("delete-by-id/{playerId}")]
+        public void DeletePlayer(int playerId)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from Player where PlayerId = '{playerId}'");
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 
-
 namespace Fifa22.Library
 {
-    public class Team
+    public class PlayerEx : Player
     {
-        public int Team_id { get; set; }
         public string Team_name { get; set; }
         public string Team_group { get; set; }
+
     }
 }
+

@@ -2,7 +2,7 @@
 
 namespace Fifa22.Library
 {
-    public class Player
+    public class Player 
     {
         public int PlayerId { get; set; }
         public string FirstName { get; set; }
