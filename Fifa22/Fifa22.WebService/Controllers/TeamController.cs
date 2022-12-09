@@ -12,11 +12,13 @@ namespace Fifa22.WebService.Controllers
         public List<Team> Get()
         {
             List<Team> team = new List<Team>();
-            DataTable teams = DatabaseHelper.ExecuteQuery("select Team_name from Team");
+            DataTable teams = DatabaseHelper.ExecuteQuery("select Team_name, Team_group, Team_id from Team");
             foreach (DataRow teamRow in teams.Rows)
             {
                 var t = new Team();
                 t.Team_name = teamRow["Team_name"].ToString();
+                t.Team_group = teamRow["Team_group"].ToString();
+                t.Team_id = Convert.ToInt32(teamRow["Team_id"]);
                 team.Add(t);
             }
             return team;
@@ -61,7 +63,9 @@ namespace Fifa22.WebService.Controllers
             {
                 var gt = new TeamEx();
                 gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
-                gt.GoalCount= Convert.ToInt32(playerRow["TeamsGoals"]);
+                gt.GoalCount = Convert.ToInt32(playerRow["TeamsGoals"]);
+                //gt.Team_name = playerRow["Team_name"].ToString();
+                //gt.Team_group = playerRow["Team_group"].ToString();
                 teamsList.Add(gt);
             }
             return teamsList;
