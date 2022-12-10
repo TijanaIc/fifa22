@@ -1,17 +1,16 @@
 ﻿using Fifa22;
 using Fifa22.Library;
-using System.Data;
 
-
-DataTable tableGroups = DatabaseHelper.ExecuteQuery("select distinct Team_group from Team");
-foreach (DataRow row in tableGroups.Rows)
+Console.WriteLine("Press any key to start application");
+Console.ReadLine();
+List<Group> groups = HttpClientHelper.ExecuteRequest<List<Group>>("http://localhost:55667/group/list");
+foreach (var group in groups)
 {
-    string group = row["Team_group"].ToString();
-    Console.WriteLine(group);
-    DataTable teams = DatabaseHelper.ExecuteQuery($"select Team_name from Team where Team_group='{group}'");
-    foreach (DataRow teamRow in teams.Rows)
+    Console.WriteLine(group.Name);
+    List<Team> teams = HttpClientHelper.ExecuteRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
+    foreach (var team in teams)
     {
-        Console.WriteLine(teamRow["Team_name"].ToString());
+        Console.WriteLine(team.Team_name);
     }
 }
 
