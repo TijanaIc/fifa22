@@ -11,6 +11,11 @@ foreach (var group in groups)
     foreach (var team in teams)
     {
         Console.WriteLine(team.Team_name);
+        List<PlayerEx> players = HttpClientHelper.ExecuteRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
+        foreach (var player in players)
+        {
+            Console.WriteLine(player.FirstName + " " + player.LastName);
+        }
     }
 }
 
