@@ -58,14 +58,14 @@ namespace Fifa22.WebService.Controllers
         public List<TeamEx> GetGoalsCount(int top)
         {
             List<TeamEx> teamsList = new List<TeamEx>();
-            DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id,sum(GoalCount) as TeamsGoals from Player group by Teamid order by TeamsGoals desc;");
+            DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc");
             foreach (DataRow playerRow in teams.Rows)
             {
                 var gt = new TeamEx();
                 gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
                 gt.GoalCount = Convert.ToInt32(playerRow["TeamsGoals"]);
-                //gt.Team_name = playerRow["Team_name"].ToString();
-                //gt.Team_group = playerRow["Team_group"].ToString();
+                gt.Team_name = playerRow["Team_name"].ToString();
+                gt.Team_group = playerRow["Team_group"].ToString();
                 teamsList.Add(gt);
             }
             return teamsList;
