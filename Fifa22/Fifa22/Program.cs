@@ -3,21 +3,33 @@ using Fifa22.Library;
 
 Console.WriteLine("Press any key to start application");
 Console.ReadLine();
-List<Group> groups = HttpClientHelper.ExecuteRequest<List<Group>>("http://localhost:55667/group/list");
+List<Group> groups = HttpClientHelper.GetRequest<List<Group>>("http://localhost:55667/group/list");
 foreach (var group in groups)
 {
     Console.WriteLine(group.Name);
-    List<Team> teams = HttpClientHelper.ExecuteRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
+    List<Team> teams = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
     foreach (var team in teams)
     {
         Console.WriteLine(team.Team_name);
-        List<PlayerEx> players = HttpClientHelper.ExecuteRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
+        List<PlayerEx> players = HttpClientHelper.GetRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
         foreach (var player in players)
         {
             Console.WriteLine(player.FirstName + " " + player.LastName);
         }
     }
 }
+
+Console.WriteLine("Press any key to insert team");
+Console.ReadLine();
+var newTeam = new Team();
+newTeam.Team_name = "ola";
+newTeam.Team_group = "new group xyz";
+var response = HttpClientHelper.PostRequest("http://localhost:55667/team/insert", newTeam);
+Console.WriteLine($"StatusCode={response}");
+
+
+
+
 
 //string[] groups = { "A", "B", "C" };
 //foreach (string group in groups)
