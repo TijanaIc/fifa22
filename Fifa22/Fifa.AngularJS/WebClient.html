@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <button ng-click="getGroupList()">OK</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Group</th>
+                    <th>Group</th>
+                    <th>Group</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="g in groupList">
+                    <td>{{ g.name }}</td>
+                    <td>{{ g.name }}</td>
+                    <td>{{ g.name }}</td>
+                </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+
+</body>
+</html>
