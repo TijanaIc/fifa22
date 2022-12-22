@@ -30,7 +30,7 @@ namespace Fifa22.Library
                 return result.StatusCode;
             }
         }
-        public static HttpStatusCode DeleteRequest<T>(string requestUrl)
+        public static HttpStatusCode DeleteRequest(string requestUrl)
         {
             using (HttpClient httpClient = new HttpClient())
             {

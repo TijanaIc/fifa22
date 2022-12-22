@@ -89,5 +89,18 @@ namespace Fifa22.WebService.Controllers
         {
             DatabaseHelper.ExecuteQuery($"delete from Player where PlayerId = '{playerId}'");
         }
+
+        [HttpPost("insert")]
+        public void InsertPlayers(Player p)
+        {
+            DatabaseHelper.ExecuteQuery($"INSERT INTO Player VALUES ('{p.FirstName}', '{p.LastName}',{p.GoalCount},{p.TeamId})");
+        }
+
+        [HttpPut("update-by-id")]
+        public void UpdatePlayer(Player p)
+        {
+            DatabaseHelper.ExecuteQuery($"UPDATE Player SET FirstName = '{p.FirstName}', LastName = '{p.LastName}',GoalCount = {p.GoalCount} where PlayerId = {p.PlayerId}");
+        }
+
     }
 }
