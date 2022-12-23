@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Library", "Fifa22.Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22", "Fifa22\Fifa22.csproj", "{6538AE74-DE1C-476B-BE8D-78126043C245}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClient", "WebClient", "{38A39C89-0F00-4C08-BA24-CC174C2CB47C}"
+	ProjectSection(SolutionItems) = preProject
+		Fifa.AngularJS\app.js = Fifa.AngularJS\app.js
+		Fifa.AngularJS\WebClient.html = Fifa.AngularJS\WebClient.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
