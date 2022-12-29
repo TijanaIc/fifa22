@@ -1,29 +1,35 @@
 ﻿using Fifa22;
 using Fifa22.Library;
 
-//Console.WriteLine("Press any key to start application");
-//Console.ReadLine();
-//List<Group> groups = HttpClientHelper.GetRequest<List<Group>>("http://localhost:55667/group/list");
-//foreach (var group in groups)
-//{
-//    Console.WriteLine(group.Name);
-//    List<Team> teams = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
-//    foreach (var team in teams)
-//    {
-//        Console.WriteLine(team.Team_name);
-//        List<PlayerEx> players = HttpClientHelper.GetRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
-//        foreach (var player in players)
-//        {
-//            Console.WriteLine(player.FirstName + " " + player.LastName);
-//        }
-//    }
-//}
+IDataReader datareader = new DatabaseReader();
+Console.WriteLine("Press any key to start application");
+Console.ReadLine();
+List<Group> groups = datareader.GetGroups();
+foreach (var group in groups)
+{
+    Console.WriteLine(group.Name);
+    List<Team> teams = datareader.GetTeam(group.Name);
+    foreach(var team in teams)
+    {
+        Console.WriteLine(team.Team_name);
+        List<Player> players = datareader.GetPlayersFromTeam(team.Team_id);
+        foreach (var player in players)
+        {
+            Console.WriteLine(player.FirstName + " " + player.LastName);
+        }
+    }
 
-//Console.WriteLine("Press any key to insert team");
-//Console.ReadLine();
-
-
-
+    //List<Team> teams = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
+    //foreach (var team in teams)
+    //{
+    //    Console.WriteLine(team.Team_name);
+    //    List<PlayerEx> players = HttpClientHelper.GetRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
+    //    foreach (var player in players)
+    //    {
+    //        Console.WriteLine(player.FirstName + " " + player.LastName);
+    //    }
+    //}
+}
 
 
 //var newTeam1 = new Team();
@@ -46,6 +52,7 @@ using Fifa22.Library;
 
 //PlayerHelper.InsertPlayers(100, 3);
 //PlayerHelper.UpdatePlayer(135);
+//PlayerHelper.UpdatePlayersFirstName(" (update)");
 Console.ReadLine();
 
 

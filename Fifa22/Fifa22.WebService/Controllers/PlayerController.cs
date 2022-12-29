@@ -1,7 +1,6 @@
 ﻿using Fifa22.Library;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
-using System.Numerics;
+
 
 namespace Fifa22.WebService.Controllers
 {
@@ -9,12 +8,19 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
+        public IDataReader DataReader { get; }
+
+        public PlayerController(IDataReader dataReader)
+        {
+            DataReader = dataReader;
+        }
+
         [HttpGet("list")]
         public List<Player> Get()
         {
             List<Player> player = new List<Player>();
-            DataTable players = DatabaseHelper.ExecuteQuery($"select * from Player");
-            foreach (DataRow playerRow in players.Rows)
+            System.Data.DataTable players = DatabaseHelper.ExecuteQuery($"select * from Player");
+            foreach (System.Data.DataRow playerRow in players.Rows)
             {
                 var p = new Player();
                 p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
@@ -27,12 +33,20 @@ namespace Fifa22.WebService.Controllers
             }
             return player;
         }
+
+        [HttpGet("search-by-team/{teamId}")]
+        public List<Player> GetPlayersFromTeam(int teamId)
+        {
+            var players = DataReader.GetPlayersFromTeam(teamId);
+            return players;            
+        }
+
         [HttpGet("search-by-GoalCount")]
         public List<Player> GetTop5Players()
         {
             List<Player> player = new List<Player>();
-            DataTable players = DatabaseHelper.ExecuteQuery($"SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc");
-            foreach (DataRow playerRow in players.Rows)
+            System.Data.DataTable players = DatabaseHelper.ExecuteQuery($"SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc");
+            foreach (System.Data.DataRow playerRow in players.Rows)
             {
                 var p = new Player();
                 p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
@@ -45,30 +59,14 @@ namespace Fifa22.WebService.Controllers
             }
             return player;
         }
-        [HttpGet("search-by-team/{teamId}")]
-        public List<Player> GetPlayersFromTeam(int teamId)
-        {
-            List<Player> player = new List<Player>();
-            DataTable players = DatabaseHelper.ExecuteQuery($"select PlayerId, FirstName, LastName, GoalCount, TeamId from Player where Teamid = '{teamId}'");
-            foreach (DataRow playerRow in players.Rows)
-            {
-                var p = new Player();
-                p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
-                p.FirstName = playerRow["FirstName"].ToString();
-                p.LastName = playerRow["LastName"].ToString();
-                p.GoalCount = Convert.ToInt32(playerRow["GoalCount"]);
-                p.TeamId = Convert.ToInt32(playerRow["TeamId"]);
-                player.Add(p);
-            }
-            return player;
-        }
+        
         [HttpGet("search-by-players-with-goals")]
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
             var table = DatabaseHelper.ExecuteQuery($"SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group, Player.PlayerId, Player.GoalCount, Player.TeamId FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id;");
 
-            foreach (DataRow row in table.Rows)
+            foreach (System.Data.DataRow row in table.Rows)
             {
                 var t = new PlayerEx();
                 t.PlayerId = Convert.ToInt32(row["PlayerId"]);

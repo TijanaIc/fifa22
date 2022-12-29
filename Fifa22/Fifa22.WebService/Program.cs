@@ -1,4 +1,9 @@
+using Fifa22.Library;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IDataReader, DatabaseReader>();
+builder.Services.AddHttpClient();
 
 // Add services to the container.
 builder.Services.AddCors(policyBuilder =>
@@ -7,10 +12,13 @@ builder.Services.AddCors(policyBuilder =>
 );
 
 
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 

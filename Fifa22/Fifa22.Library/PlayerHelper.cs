@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fifa22.Library
 {
@@ -20,9 +15,9 @@ namespace Fifa22.Library
                 player.TeamId = teamId;
                 HttpClientHelper.PostRequest("http://localhost:55667/player/insert", player);
                 Console.WriteLine(player);
-
             }
         }
+
         public static void UpdatePlayer(int playerId)
         {
             var player = new Player();
@@ -35,6 +30,15 @@ namespace Fifa22.Library
             Console.WriteLine(player);
         }
 
-
+        public static void UpdatePlayersFirstName(string sufix)
+        {
+            List<Player> players = HttpClientHelper.GetRequest<List<Player>>($"http://localhost:55667/player/list");
+            foreach (var player in players)
+            {
+                player.FirstName+= sufix;
+                HttpClientHelper.PutRequest("http://localhost:55667/player/update-by-id", player);
+                Console.WriteLine(player);
+            }
+        }
     }
 }
