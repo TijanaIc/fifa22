@@ -9,10 +9,12 @@ namespace Fifa22.WebService.Controllers
     public class TeamController : Controller
     {
         public IDataReader DataReader { get; }
+        public DatabaseHelper DatabaseHelper { get; }
 
-        public TeamController(IDataReader dataReader)
+        public TeamController(IDataReader dataReader, DatabaseHelper databaseHelper)
         {
             DataReader = dataReader;
+            DatabaseHelper = databaseHelper;
         }
 
         [HttpGet("list")]

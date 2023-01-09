@@ -2,6 +2,7 @@ using Fifa22.Library;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSingleton<DatabaseHelper>();
 builder.Services.AddTransient<IDataReader, DatabaseReader>();
 builder.Services.AddHttpClient();
 
