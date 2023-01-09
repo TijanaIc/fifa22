@@ -1,7 +1,7 @@
 ﻿using Fifa22;
 using Fifa22.Library;
 
-IDataReader datareader = new DatabaseReader();
+IDataReader datareader = new ServiceReader();
 Console.WriteLine("Press any key to start application");
 Console.ReadLine();
 List<Group> groups = datareader.GetGroups();

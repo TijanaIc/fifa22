@@ -9,10 +9,12 @@ namespace Fifa22.WebService.Controllers
     public class PlayerController : Controller
     {
         public IDataReader DataReader { get; }
+        public IConfiguration Configuration { get; }
 
-        public PlayerController(IDataReader dataReader)
+        public PlayerController(IDataReader dataReader, IConfiguration configuration)
         {
             DataReader = dataReader;
+            Configuration = configuration;
         }
 
         [HttpGet("list")]
@@ -37,6 +39,7 @@ namespace Fifa22.WebService.Controllers
         [HttpGet("search-by-team/{teamId}")]
         public List<Player> GetPlayersFromTeam(int teamId)
         {
+            string xyz = Configuration["endpoint"];
             var players = DataReader.GetPlayersFromTeam(teamId);
             return players;            
         }
