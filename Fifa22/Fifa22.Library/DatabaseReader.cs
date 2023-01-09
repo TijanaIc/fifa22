@@ -4,6 +4,13 @@ namespace Fifa22.Library
 {
     public class DatabaseReader : IDataReader
     {
+        public DatabaseHelper DatabaseHelper { get; }
+
+        public DatabaseReader(DatabaseHelper databaseHelper)
+        {
+            DatabaseHelper = databaseHelper;
+        }
+
         public List<Group> GetGroups()
         {
             List<Group> groups = new List<Group>();

@@ -1,16 +1,22 @@
-﻿using System.Data;
+﻿using Microsoft.Extensions.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Fifa22.Library
 {
     public class DatabaseHelper
     {
-        static string connectionString = @"Server=localhost;Database=Fifa22;Trusted_Connection=True;";
-        public static DataTable ExecuteQuery(string query)
+        string ConnectionString { get; set; }
+        public DatabaseHelper(IConfiguration configuration)
+        {
+            ConnectionString = configuration.GetConnectionString("FifaDatabase");
+        }
+
+        public DataTable ExecuteQuery(string query)
         {
 
             DataTable dataTable = new DataTable();
-            SqlConnection conn = new SqlConnection(connectionString);
+            SqlConnection conn = new SqlConnection(ConnectionString);
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
 
