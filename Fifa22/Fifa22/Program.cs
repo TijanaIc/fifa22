@@ -4,6 +4,7 @@ using Fifa22.Library;
 IDataReader datareader = new ServiceReader();
 Console.WriteLine("Press any key to start application");
 Console.ReadLine();
+
 List<Group> groups = datareader.GetGroups();
 foreach (var group in groups)
 {
@@ -19,16 +20,6 @@ foreach (var group in groups)
         }
     }
 
-    //List<Team> teams = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{group.Name}");
-    //foreach (var team in teams)
-    //{
-    //    Console.WriteLine(team.Team_name);
-    //    List<PlayerEx> players = HttpClientHelper.GetRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-team/{team.Team_id}");
-    //    foreach (var player in players)
-    //    {
-    //        Console.WriteLine(player.FirstName + " " + player.LastName);
-    //    }
-    //}
 }
 
 

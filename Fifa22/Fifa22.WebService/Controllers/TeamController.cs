@@ -20,17 +20,8 @@ namespace Fifa22.WebService.Controllers
         [HttpGet("list")]
         public List<Team> Get()
         {
-            List<Team> team = new List<Team>();
-            System.Data.DataTable teams = DatabaseHelper.ExecuteQuery("select Team_name, Team_group, Team_id from Team");
-            foreach (System.Data.DataRow teamRow in teams.Rows)
-            {
-                var t = new Team();
-                t.Team_name = teamRow["Team_name"].ToString();
-                t.Team_group = teamRow["Team_group"].ToString();
-                t.Team_id = Convert.ToInt32(teamRow["Team_id"]);
-                team.Add(t);
-            }
-            return team;
+            var teams = DataReader.Get();
+            return teams;
         }
 
         [HttpGet("search-by-group/{groupName}")]

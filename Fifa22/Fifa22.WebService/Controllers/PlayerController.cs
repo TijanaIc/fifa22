@@ -18,22 +18,10 @@ namespace Fifa22.WebService.Controllers
         }
 
         [HttpGet("list")]
-        public List<Player> Get()
+        public List<Player> GetPlayers()
         {
-            List<Player> player = new List<Player>();
-            System.Data.DataTable players = DatabaseHelper.ExecuteQuery($"select * from Player");
-            foreach (System.Data.DataRow playerRow in players.Rows)
-            {
-                var p = new Player();
-                p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
-                p.FirstName = playerRow["FirstName"].ToString();
-                p.LastName = playerRow["LastName"].ToString();
-                p.GoalCount = Convert.ToInt32(playerRow["GoalCount"]);
-                p.TeamId = Convert.ToInt32(playerRow["TeamId"]);
-
-                player.Add(p);
-            }
-            return player;
+            var players = DataReader.GetPlayers();
+            return players;
         }
 
         [HttpGet("search-by-team/{teamId}")]
