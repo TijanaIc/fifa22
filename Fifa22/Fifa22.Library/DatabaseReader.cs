@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using Fifa22.Library.Resources;
 
 namespace Fifa22.Library
 {
@@ -14,7 +15,8 @@ namespace Fifa22.Library
         public List<Group> GetGroups()
         {
             List<Group> groups = new List<Group>();
-            DataTable tableGroups = DatabaseHelper.ExecuteQuery("select distinct Team_group from Team");
+            string query = DatabaseQueries.GROUP_LIST;
+            DataTable tableGroups = DatabaseHelper.ExecuteQuery(query);
             foreach (DataRow row in tableGroups.Rows)
             {
                 var g = new Group();
