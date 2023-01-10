@@ -20,47 +20,29 @@ namespace Fifa22.WebService.Controllers
         [HttpGet("list")]
         public List<Team> Get()
         {
-            var teams = DataReader.Get();
+            var teams = DataReader.GetTeams();
             return teams;
         }
 
         [HttpGet("search-by-group/{groupName}")]
         public List<Team> GetTeams(string groupName)
         {
-            var teams = DataReader.GetTeam(groupName);
+            var teams = DataReader.GetTeamByName(groupName);
             return teams;
         }
 
         [HttpGet("search-by-id/{teamId}")]
-        public Team GetTeam(int teamId)
+        public List<Team> GetTeamById(int teamId)
         {
-            System.Data.DataTable teams = DatabaseHelper.ExecuteQuery($"select * from Team where Team_id='{teamId}'");
-            foreach (System.Data.DataRow teamRow in teams.Rows)
-            {
-                var t = new Team();
-                t.Team_name = teamRow["Team_name"].ToString();
-                t.Team_id = Convert.ToInt32(teamRow["Team_id"]);
-                t.Team_group = teamRow["Team_group"].ToString();
-                return t;
-            }
-            return null;
+            var teams = DataReader.GetTeamById(teamId);
+            return teams;
         }
 
         [HttpGet("search-by-goals/{top}")]
-        public List<TeamEx> GetGoalsCount(int top)
+        public List<TeamEx> GetTeamByGoal(int top)
         {
-            List<TeamEx> teamsList = new List<TeamEx>();
-            System.Data.DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc");
-            foreach (System.Data.DataRow playerRow in teams.Rows)
-            {
-                var gt = new TeamEx();
-                gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
-                gt.GoalCount = Convert.ToInt32(playerRow["TeamsGoals"]);
-                gt.Team_name = playerRow["Team_name"].ToString();
-                gt.Team_group = playerRow["Team_group"].ToString();
-                teamsList.Add(gt);
-            }
-            return teamsList;
+            var teams = DataReader.GetTeamByGoal(top);
+            return teams;
         }
 
         [HttpDelete("delete-by-id/{team_id}")]

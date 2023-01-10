@@ -9,15 +9,27 @@ namespace Fifa22.Library
             var result = HttpClientHelper.GetRequest<List<Group>>("http://localhost:55667/group/list");
             return result;
         }
-        public List<Team> Get()
+        public List<Team> GetTeams()
         {
             var result = HttpClientHelper.GetRequest<List<Team>>("http://localhost:55667/team/list");
             return result;
         }
 
-        public List<Team> GetTeam(string groupName)
+        public List<Team> GetTeamByName(string groupName)
         {
             var result = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-group/{groupName}");
+            return result;
+        }
+
+        public List<Team> GetTeamById(int teamId)
+        {
+            var result = HttpClientHelper.GetRequest<List<Team>>($"http://localhost:55667/team/search-by-id/{teamId}");
+            return result;
+        }
+
+        public List<TeamEx> GetTeamByGoal(int top)
+        {
+            var result = HttpClientHelper.GetRequest<List<TeamEx>>($"http://localhost:55667/team/search-by-goals/{top}");
             return result;
         }
 

@@ -24,7 +24,7 @@ namespace Fifa22.Library
 
             return groups;
         }
-        public List<Team> Get()
+        public List<Team> GetTeams()
         {
             List<Team> team = new List<Team>();
             System.Data.DataTable teams = DatabaseHelper.ExecuteQuery("select Team_name, Team_group, Team_id from Team");
@@ -39,7 +39,7 @@ namespace Fifa22.Library
             return team;
         }
 
-        public List<Team> GetTeam(string groupName)
+        public List<Team> GetTeamByName(string groupName)
         {
             List<Team> teams = new List<Team>();
             DataTable tableTeam = DatabaseHelper.ExecuteQuery($"select Team_name, Team_group, Team_id from Team where Team_group = '{groupName}'");
@@ -53,6 +53,38 @@ namespace Fifa22.Library
             }
 
             return teams;
+        }
+
+        public List<Team> GetTeamById(int teamId)
+        {
+            List<Team> teams = new List<Team>();
+            DataTable tableTeam = DatabaseHelper.ExecuteQuery($"select Team_name, Team_group, Team_id from Team where Team_id = '{teamId}'");
+            foreach (DataRow row in tableTeam.Rows)
+            {
+                var t = new Team();
+                t.Team_name = row["Team_name"].ToString();
+                t.Team_group = row["Team_group"].ToString();
+                t.Team_id = Convert.ToInt32(row["Team_id"]);
+                teams.Add(t);
+            }
+
+            return teams;
+        }
+
+        public List<TeamEx> GetTeamByGoal(int top)
+        {
+            List<TeamEx> teamsList = new List<TeamEx>();
+            System.Data.DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc");
+            foreach (System.Data.DataRow playerRow in teams.Rows)
+            {
+                var gt = new TeamEx();
+                gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
+                gt.GoalCount = Convert.ToInt32(playerRow["TeamsGoals"]);
+                gt.Team_name = playerRow["Team_name"].ToString();
+                gt.Team_group = playerRow["Team_group"].ToString();
+                teamsList.Add(gt);
+            }
+            return teamsList;
         }
 
         public List<Player> GetPlayers()

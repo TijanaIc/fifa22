@@ -5,8 +5,10 @@ namespace Fifa22.Library
     public interface IDataReader
     {
         List<Group> GetGroups();
-        List<Team> Get();
-        List<Team> GetTeam(string groupName);
+        List<Team> GetTeams();
+        List<Team> GetTeamByName(string groupName);
+        List<Team> GetTeamById(int teamId);
+        List<TeamEx> GetTeamByGoal(int top);
         List<Player> GetPlayers();
         List<Player> GetPlayersFromTeam(int teamId);
     }
