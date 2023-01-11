@@ -17,12 +17,21 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>DatabaseQueries.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\TeamQueries.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>TeamQueries.resx</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
 	  <EmbeddedResource Update="Resources\DatabaseQueries.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>DatabaseQueries.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\TeamQueries.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>TeamQueries.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 	
