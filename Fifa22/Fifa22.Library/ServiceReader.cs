@@ -44,5 +44,17 @@ namespace Fifa22.Library
             var result = HttpClientHelper.GetRequest<List<Player>>($"http://localhost:55667/player/search-by-team/{teamId}");
             return result;
         }
+
+        public List<Player> GetTop5Players()
+        {
+            var result = HttpClientHelper.GetRequest<List<Player>>($"http://localhost:55667/player/search-by-GoalCount");
+            return result;
+        }
+
+        public List<PlayerEx> GetAllPlayersWithGoals()
+        {
+            var result = HttpClientHelper.GetRequest<List<PlayerEx>>($"http://localhost:55667/player/search-by-players-with-goals");
+            return result;
+        }
     }
 }

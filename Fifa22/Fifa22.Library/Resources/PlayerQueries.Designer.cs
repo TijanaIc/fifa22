@@ -22,14 +22,14 @@ namespace Fifa22.Library.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TeamQueries {
+    internal class PlayerQueries {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TeamQueries() {
+        internal PlayerQueries() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Fifa22.Library.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fifa22.Library.Resources.TeamQueries", typeof(TeamQueries).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fifa22.Library.Resources.PlayerQueries", typeof(PlayerQueries).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,38 @@ namespace Fifa22.Library.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select top {0} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc.
+        ///   Looks up a localized string similar to SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group, Player.PlayerId, Player.GoalCount, Player.TeamId FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id.
         /// </summary>
-        internal static string GET_TEAM_BY_GOAL {
+        internal static string GET_ALL_PLAYERS_WITH_GOALS {
             get {
-                return ResourceManager.GetString("GET_TEAM_BY_GOAL", resourceCulture);
+                return ResourceManager.GetString("GET_ALL_PLAYERS_WITH_GOALS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select Team_name, Team_group, Team_id from Team where Team_id = &apos;{0}&apos;.
+        ///   Looks up a localized string similar to select FirstName, LastName from Player where TeamId = &apos;{0}&apos;.
         /// </summary>
-        internal static string GET_TEAM_BY_ID {
+        internal static string GET_PLAYER_BY_TEAM {
             get {
-                return ResourceManager.GetString("GET_TEAM_BY_ID", resourceCulture);
+                return ResourceManager.GetString("GET_PLAYER_BY_TEAM", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select Team_name, Team_group, Team_id from Team where Team_group = &apos;{0}&apos;.
+        ///   Looks up a localized string similar to SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc.
         /// </summary>
-        internal static string GET_TEAM_BY_NAME {
+        internal static string GET_TOP5_PLAYERS {
             get {
-                return ResourceManager.GetString("GET_TEAM_BY_NAME", resourceCulture);
+                return ResourceManager.GetString("GET_TOP5_PLAYERS", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select Team_name, Team_group, Team_id from Team.
+        ///   Looks up a localized string similar to select * from Player.
         /// </summary>
-        internal static string TEAM_LIST {
+        internal static string PLAYER_LIST {
             get {
-                return ResourceManager.GetString("TEAM_LIST", resourceCulture);
+                return ResourceManager.GetString("PLAYER_LIST", resourceCulture);
             }
         }
     }

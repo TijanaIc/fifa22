@@ -17,6 +17,11 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>DatabaseQueries.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="Resources\PlayerQueries.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>PlayerQueries.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\TeamQueries.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -28,6 +33,10 @@
 	  <EmbeddedResource Update="Resources\DatabaseQueries.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
 	    <LastGenOutput>DatabaseQueries.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\PlayerQueries.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>PlayerQueries.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\TeamQueries.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>

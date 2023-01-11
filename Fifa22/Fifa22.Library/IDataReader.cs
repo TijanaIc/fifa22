@@ -11,5 +11,7 @@ namespace Fifa22.Library
         List<TeamEx> GetTeamByGoal(int top);
         List<Player> GetPlayers();
         List<Player> GetPlayersFromTeam(int teamId);
+        List<Player> GetTop5Players();
+        List<PlayerEx> GetAllPlayersWithGoals();
     }
 }

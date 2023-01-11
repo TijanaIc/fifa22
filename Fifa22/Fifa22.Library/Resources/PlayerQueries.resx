@@ -117,16 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="GET_TEAM_BY_GOAL" xml:space="preserve">
-    <value>select top {0} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc</value>
+  <data name="GET_ALL_PLAYERS_WITH_GOALS" xml:space="preserve">
+    <value>SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group, Player.PlayerId, Player.GoalCount, Player.TeamId FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id</value>
   </data>
-  <data name="GET_TEAM_BY_ID" xml:space="preserve">
-    <value>select Team_name, Team_group, Team_id from Team where Team_id = '{0}'</value>
+  <data name="GET_PLAYER_BY_TEAM" xml:space="preserve">
+    <value>select FirstName, LastName from Player where TeamId = '{0}'</value>
   </data>
-  <data name="GET_TEAM_BY_NAME" xml:space="preserve">
-    <value>select Team_name, Team_group, Team_id from Team where Team_group = '{0}'</value>
+  <data name="GET_TOP5_PLAYERS" xml:space="preserve">
+    <value>SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc</value>
   </data>
-  <data name="TEAM_LIST" xml:space="preserve">
-    <value>select Team_name, Team_group, Team_id from Team</value>
+  <data name="PLAYER_LIST" xml:space="preserve">
+    <value>select * from Player</value>
   </data>
 </root>

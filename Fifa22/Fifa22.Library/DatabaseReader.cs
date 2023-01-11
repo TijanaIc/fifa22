@@ -45,7 +45,8 @@ namespace Fifa22.Library
         public List<Team> GetTeamByName(string groupName)
         {
             List<Team> teams = new List<Team>();
-            DataTable tableTeam = DatabaseHelper.ExecuteQuery($"select Team_name, Team_group, Team_id from Team where Team_group = '{groupName}'");
+            string query = string.Format(TeamQueries.GET_TEAM_BY_NAME, groupName);
+            DataTable tableTeam = DatabaseHelper.ExecuteQuery(query);
             foreach (DataRow row in tableTeam.Rows)
             {
                 var t = new Team();
@@ -61,7 +62,8 @@ namespace Fifa22.Library
         public List<Team> GetTeamById(int teamId)
         {
             List<Team> teams = new List<Team>();
-            DataTable tableTeam = DatabaseHelper.ExecuteQuery($"select Team_name, Team_group, Team_id from Team where Team_id = '{teamId}'");
+            string query = string.Format(TeamQueries.GET_TEAM_BY_ID, teamId);
+            DataTable tableTeam = DatabaseHelper.ExecuteQuery(query);
             foreach (DataRow row in tableTeam.Rows)
             {
                 var t = new Team();
@@ -77,8 +79,9 @@ namespace Fifa22.Library
         public List<TeamEx> GetTeamByGoal(int top)
         {
             List<TeamEx> teamsList = new List<TeamEx>();
-            System.Data.DataTable teams = DatabaseHelper.ExecuteQuery($"select top {top} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc");
-            foreach (System.Data.DataRow playerRow in teams.Rows)
+            string query = string.Format(TeamQueries.GET_TEAM_BY_GOAL, top);
+            DataTable teams = DatabaseHelper.ExecuteQuery(query);
+            foreach (DataRow playerRow in teams.Rows)
             {
                 var gt = new TeamEx();
                 gt.Team_id = Convert.ToInt32(playerRow["Team_id"]);
@@ -93,8 +96,9 @@ namespace Fifa22.Library
         public List<Player> GetPlayers()
         {
             List<Player> player = new List<Player>();
-            System.Data.DataTable players = DatabaseHelper.ExecuteQuery($"select * from Player");
-            foreach (System.Data.DataRow playerRow in players.Rows)
+            string query = PlayerQueries.PLAYER_LIST;
+            DataTable players = DatabaseHelper.ExecuteQuery(query);
+            foreach (DataRow playerRow in players.Rows)
             {
                 var p = new Player();
                 p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
@@ -111,7 +115,8 @@ namespace Fifa22.Library
         public List<Player> GetPlayersFromTeam(int teamId)
         {
             List<Player> players = new List<Player>();
-            DataTable tablePlayers = DatabaseHelper.ExecuteQuery($"select FirstName, LastName from Player where TeamId = '{teamId}'");
+            string query = string.Format(PlayerQueries.GET_PLAYER_BY_TEAM, teamId);
+            DataTable tablePlayers = DatabaseHelper.ExecuteQuery(query);
             foreach (DataRow row in tablePlayers.Rows)
             {
                 var p = new Player();
@@ -120,6 +125,47 @@ namespace Fifa22.Library
                 players.Add(p);
             }
             return players;
+        }
+
+        public List<Player> GetTop5Players()
+        {
+            List<Player> player = new List<Player>();
+            string query = string.Format(PlayerQueries.GET_TOP5_PLAYERS);
+            DataTable players = DatabaseHelper.ExecuteQuery(query);
+            foreach (DataRow playerRow in players.Rows)
+            {
+                var p = new Player();
+                p.PlayerId = Convert.ToInt32(playerRow["PlayerId"]);
+                p.FirstName = playerRow["FirstName"].ToString();
+                p.LastName = playerRow["LastName"].ToString();
+                p.GoalCount = Convert.ToInt32(playerRow["GoalCount"]);
+                p.TeamId = Convert.ToInt32(playerRow["TeamId"]);
+
+                player.Add(p);
+            }
+            return player;
+        }
+
+        public List<PlayerEx> GetAllPlayersWithGoals()
+        {
+            var result = new List<PlayerEx>();
+            string query = string.Format(PlayerQueries.GET_ALL_PLAYERS_WITH_GOALS);
+            var table = DatabaseHelper.ExecuteQuery(query);
+
+            foreach (System.Data.DataRow row in table.Rows)
+            {
+                var t = new PlayerEx();
+                t.PlayerId = Convert.ToInt32(row["PlayerId"]);
+                t.FirstName = row["FirstName"].ToString();
+                t.LastName = row["LastName"].ToString();
+                t.Team_name = row["Team_name"].ToString();
+                t.Team_group = row["Team_group"].ToString();
+                t.GoalCount = Convert.ToInt32(row["GoalCount"]);
+                t.TeamId = Convert.ToInt32(row["TeamId"]);
+                result.Add(t);
+            }
+
+            return result;
         }
     }
 }
