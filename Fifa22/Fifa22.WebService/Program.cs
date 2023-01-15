@@ -1,9 +1,11 @@
 using Fifa22.Library;
+using Fifa22.Library.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<DatabaseHelper>();
 builder.Services.AddTransient<IDataReader, DatabaseReader>();
+builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddHttpClient();
 
 // Add services to the container.

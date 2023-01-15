@@ -1,4 +1,5 @@
 using Fifa22.Library;
+using Fifa22.Library.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fifa22.WebService.Controllers
@@ -7,19 +8,17 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class GroupController : ControllerBase
     {
-        public IDataReader DataReader { get; }
-        public DatabaseHelper DatabaseHelper { get; }
+        public IGroupRepository GroupRepository { get; }
 
-        public GroupController(IDataReader dataReader, DatabaseHelper databaseHelper)
+        public GroupController(IGroupRepository groupRepository)
         {
-            DataReader = dataReader;
-            DatabaseHelper = databaseHelper;
+            GroupRepository = groupRepository;
         }
 
         [HttpGet("list")]    
         public List<Group> Get()
         {
-            var groups = DataReader.GetGroups();
+            var groups = GroupRepository.GetGroups();
             return groups;
         }
     }
