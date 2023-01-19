@@ -3,6 +3,7 @@ using Fifa22.Library.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<System.Data.IDbConnection>(sp => new System.Data.SqlClient.SqlConnection(sp.GetRequiredService<IConfiguration>().GetConnectionString("FifaDatabase")));
 builder.Services.AddSingleton<DatabaseHelper>();
 builder.Services.AddTransient<IDataReader, DatabaseReader>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();

@@ -1,4 +1,5 @@
 ﻿using Fifa22.Library;
+using Fifa22.Library.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -8,33 +9,31 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
-        public IDataReader DataReader { get; }
-        public DatabaseHelper DatabaseHelper { get; }
+        public IPlayerRepository PlayerRepository { get; }
 
-        public PlayerController(IDataReader dataReader, DatabaseHelper databaseHelper)
+        public PlayerController(IPlayerRepository playerRepository)
         {
-            DataReader = dataReader;
-            DatabaseHelper = databaseHelper;
+            PlayerRepository = playerRepository;
         }
 
         [HttpGet("list")]
         public List<Player> GetPlayers()
         {
-            var players = DataReader.GetPlayers();
+            var players = PlayerRepository.GetPlayers();
             return players;
         }
 
         [HttpGet("search-by-team/{teamId}")]
         public List<Player> GetPlayersFromTeam(int teamId)
         {
-            var players = DataReader.GetPlayersFromTeam(teamId);
+            var players = PlayerRepository.GetPlayersFromTeam(teamId);
             return players;            
         }
 
         [HttpGet("search-by-GoalCount")]
         public List<Player> GetTop5Players()
         {
-            var players = DataReader.GetTop5Players();
+            var players = PlayerRepository.GetTop5Players();
             return players;
         }
         
@@ -42,27 +41,27 @@ namespace Fifa22.WebService.Controllers
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
-            var table = DataReader.GetTop5Players();
+            var table = PlayerRepository.GetTop5Players();
             return result;
         }
 
-        [HttpDelete("delete-by-id/{playerId}")]
-        public void DeletePlayer(int playerId)
-        {
-            DatabaseHelper.ExecuteQuery($"delete from Player where PlayerId = '{playerId}'");
-        }
+        //[HttpDelete("delete-by-id/{playerId}")]
+        //public void DeletePlayer(int playerId)
+        //{
+        //    DatabaseHelper.ExecuteQuery($"delete from Player where PlayerId = '{playerId}'");
+        //}
 
-        [HttpPost("insert")]
-        public void InsertPlayers(Player p)
-        {
-            DatabaseHelper.ExecuteQuery($"INSERT INTO Player VALUES ('{p.FirstName}', '{p.LastName}',{p.GoalCount},{p.TeamId})");
-        }
+        //[HttpPost("insert")]
+        //public void InsertPlayers(Player p)
+        //{
+        //    DatabaseHelper.ExecuteQuery($"INSERT INTO Player VALUES ('{p.FirstName}', '{p.LastName}',{p.GoalCount},{p.TeamId})");
+        //}
 
-        [HttpPut("update-by-id")]
-        public void UpdatePlayer(Player p)
-        {
-            DatabaseHelper.ExecuteQuery($"UPDATE Player SET FirstName = '{p.FirstName}', LastName = '{p.LastName}',GoalCount = {p.GoalCount} where PlayerId = {p.PlayerId}");
-        }
+        //[HttpPut("update-by-id")]
+        //public void UpdatePlayer(Player p)
+        //{
+        //    DatabaseHelper.ExecuteQuery($"UPDATE Player SET FirstName = '{p.FirstName}', LastName = '{p.LastName}',GoalCount = {p.GoalCount} where PlayerId = {p.PlayerId}");
+        //}
 
     }
 }

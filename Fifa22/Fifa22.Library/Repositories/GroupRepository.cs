@@ -5,9 +5,9 @@ namespace Fifa22.Library.Repositories
 {
     public class GroupRepository : IGroupRepository
     {
-        public DatabaseHelper DatabaseConnection { get; }
+        public IDbConnection DatabaseConnection { get; }
 
-        public GroupRepository(DatabaseHelper databaseConnection)
+        public GroupRepository(IDbConnection databaseConnection)
         {
             DatabaseConnection = databaseConnection;
         }
