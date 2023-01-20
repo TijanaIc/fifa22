@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClient", "WebClient", "{
 		Fifa.AngularJS\WebClient.html = Fifa.AngularJS\WebClient.html
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Tests", "Fifa22.Tests\Fifa22.Tests.csproj", "{A0DECF96-01E9-4974-99FA-96DA13B38625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0DECF96-01E9-4974-99FA-96DA13B38625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DECF96-01E9-4974-99FA-96DA13B38625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DECF96-01E9-4974-99FA-96DA13B38625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DECF96-01E9-4974-99FA-96DA13B38625}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
