@@ -2,7 +2,7 @@
 
 namespace Fifa22.Library
 {
-    public static class DbconnectionExtensions
+    public static class DbConnectionExtensions
     {
         public static DataTable ExecuteQuery(this IDbConnection dbConnection, string query)
         {

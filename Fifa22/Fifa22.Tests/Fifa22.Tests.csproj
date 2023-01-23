@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,8 +7,9 @@
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
+	
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.13" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -23,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fifa22.Library\Fifa22.Library.csproj" />
+    <ProjectReference Include="..\Fifa22.WebService\Fifa22.WebService.csproj" />
   </ItemGroup>
 
 </Project>

@@ -41,7 +41,7 @@ namespace Fifa22.WebService.Controllers
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
-            var table = PlayerRepository.GetTop5Players();
+            var table = PlayerRepository.GetAllPlayersWithGoals();
             return result;
         }
 
