@@ -41,8 +41,8 @@ namespace Fifa22.WebService.Controllers
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
-            var table = PlayerRepository.GetAllPlayersWithGoals();
-            return result;
+            var players = PlayerRepository.GetAllPlayersWithGoals();
+            return players;
         }
 
         //[HttpDelete("delete-by-id/{playerId}")]

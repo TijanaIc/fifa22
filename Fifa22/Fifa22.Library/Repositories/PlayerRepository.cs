@@ -74,9 +74,9 @@ namespace Fifa22.Library.Repositories
         {
             var result = new List<PlayerEx>();
             string query = string.Format(PlayerQueries.GET_ALL_PLAYERS_WITH_GOALS);
-            var table = DatabaseConnection.ExecuteQuery(query);
+            DataTable players = DatabaseConnection.ExecuteQuery(query);
 
-            foreach (System.Data.DataRow row in table.Rows)
+            foreach (System.Data.DataRow row in players.Rows)
             {
                 var t = new PlayerEx();
                 t.PlayerId = Convert.ToInt32(row["PlayerId"]);
