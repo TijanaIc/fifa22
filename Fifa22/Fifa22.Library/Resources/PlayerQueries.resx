@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeletePlayer" xml:space="preserve">
+    <value>delete from Player where PlayerId = '{0}'</value>
+  </data>
   <data name="GET_ALL_PLAYERS_WITH_GOALS" xml:space="preserve">
     <value>SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group, Player.PlayerId, Player.GoalCount, Player.TeamId FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id</value>
   </data>
@@ -126,7 +129,13 @@
   <data name="GET_TOP5_PLAYERS" xml:space="preserve">
     <value>SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc</value>
   </data>
+  <data name="InsertPlayers" xml:space="preserve">
+    <value>INSERT INTO Player VALUES ('{0}', '{1}',{2},{3})</value>
+  </data>
   <data name="PLAYER_LIST" xml:space="preserve">
     <value>select * from Player</value>
+  </data>
+  <data name="UpdatePlayer" xml:space="preserve">
+    <value>UPDATE Player SET FirstName = '{0}', LastName = '{1}',GoalCount = {2} where PlayerId = {3}</value>
   </data>
 </root>

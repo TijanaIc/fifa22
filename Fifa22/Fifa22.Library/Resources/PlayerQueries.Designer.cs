@@ -22,7 +22,7 @@ namespace Fifa22.Library.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PlayerQueries {
+    public class PlayerQueries {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Fifa22.Library.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fifa22.Library.Resources.PlayerQueries", typeof(PlayerQueries).Assembly);
@@ -51,7 +51,7 @@ namespace Fifa22.Library.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,18 @@ namespace Fifa22.Library.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to delete from Player where PlayerId = &apos;{0}&apos;.
+        /// </summary>
+        public static string DeletePlayer {
+            get {
+                return ResourceManager.GetString("DeletePlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT Player.FirstName, Player.LastName, Team.Team_name, Team.Team_group, Player.PlayerId, Player.GoalCount, Player.TeamId FROM Player INNER JOIN Team ON Player.Teamid=Team.Team_id.
         /// </summary>
-        internal static string GET_ALL_PLAYERS_WITH_GOALS {
+        public static string GET_ALL_PLAYERS_WITH_GOALS {
             get {
                 return ResourceManager.GetString("GET_ALL_PLAYERS_WITH_GOALS", resourceCulture);
             }
@@ -72,7 +81,7 @@ namespace Fifa22.Library.Resources {
         /// <summary>
         ///   Looks up a localized string similar to select FirstName, LastName from Player where TeamId = &apos;{0}&apos;.
         /// </summary>
-        internal static string GET_PLAYER_BY_TEAM {
+        public static string GET_PLAYER_BY_TEAM {
             get {
                 return ResourceManager.GetString("GET_PLAYER_BY_TEAM", resourceCulture);
             }
@@ -81,18 +90,36 @@ namespace Fifa22.Library.Resources {
         /// <summary>
         ///   Looks up a localized string similar to SELECT  TOP 5 * FROM Player ORDER BY GoalCount desc.
         /// </summary>
-        internal static string GET_TOP5_PLAYERS {
+        public static string GET_TOP5_PLAYERS {
             get {
                 return ResourceManager.GetString("GET_TOP5_PLAYERS", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Player VALUES (&apos;{0}&apos;, &apos;{1}&apos;,{2},{3}).
+        /// </summary>
+        public static string InsertPlayers {
+            get {
+                return ResourceManager.GetString("InsertPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to select * from Player.
         /// </summary>
-        internal static string PLAYER_LIST {
+        public static string PLAYER_LIST {
             get {
                 return ResourceManager.GetString("PLAYER_LIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPDATE Player SET FirstName = &apos;{0}&apos;, LastName = &apos;{1}&apos;,GoalCount = {2} where PlayerId = {3}.
+        /// </summary>
+        public static string UpdatePlayer {
+            get {
+                return ResourceManager.GetString("UpdatePlayer", resourceCulture);
             }
         }
     }

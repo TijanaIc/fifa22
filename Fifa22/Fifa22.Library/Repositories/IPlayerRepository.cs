@@ -12,5 +12,8 @@ namespace Fifa22.Library.Repositories
         List<Player> GetPlayersFromTeam(int teamId);
         List<Player> GetTop5Players();
         List<PlayerEx> GetAllPlayersWithGoals();
+        void DeletePlayer(int playerId);
+        void InsertPlayers(Player p);
+        void UpdatePlayer(Player p);
     }
 }

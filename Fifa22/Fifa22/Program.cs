@@ -1,6 +1,5 @@
 ﻿using Fifa22;
 using Fifa22.Library;
-using static Fifa22.DelegatePlayground;
 
 
 //IDataReader datareader = new ServiceReader();
@@ -31,7 +30,7 @@ using static Fifa22.DelegatePlayground;
 
 
 PrintMessage d = new PrintMessage(PrintMessageToConsole);
-new DelegatePlayground().Run(d);
+d("Tijana");
 Console.ReadLine();
 static void PrintMessageToConsole(string message)
 {

@@ -83,5 +83,22 @@ namespace Fifa22.Library.Repositories
             }
             return teamsList;
         }
+
+        public void InsertTeam(Team team)
+        {
+            string query = string.Format(TeamQueries.InsertTeam, team.Team_name, team.Team_group);
+            DataTable teams = DatabaseConnection.ExecuteQuery(query);
+        }
+        public void UpdateTeam(Team team)
+        {
+            string query = string.Format(TeamQueries.UpdateTeam, team.Team_name, team.Team_group, team.Team_id);
+            DataTable teams = DatabaseConnection.ExecuteQuery(query);
+        }
+
+        public void DeleteTeam(int team_id)
+        {
+            string query = string.Format(TeamQueries.DeleteTeam, team_id);
+            DataTable teams = DatabaseConnection.ExecuteQuery(query);
+        }
     }
 }

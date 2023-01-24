@@ -4,15 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fifa22
+namespace Fifa22.Library
 {
     public delegate void PrintMessage(string message);
-
-    public class DelegatePlayground
-    {        
-        public void Run(PrintMessage d)
-        {
-            d("Tijana");
-        }
-    }
 }

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeleteTeam" xml:space="preserve">
+    <value>delete from Player where TeamId = {0} ; delete from Team where Team_id = {0}</value>
+  </data>
   <data name="GET_TEAM_BY_GOAL" xml:space="preserve">
     <value>select top {0} Teamid as Team_id, sum(GoalCount) as TeamsGoals, Team_name, Team_group from PlayerEx group by Teamid, Team_name, Team_group  order by TeamsGoals desc</value>
   </data>
@@ -126,7 +129,13 @@
   <data name="GET_TEAM_BY_NAME" xml:space="preserve">
     <value>select Team_name, Team_group, Team_id from Team where Team_group = '{0}'</value>
   </data>
+  <data name="InsertTeam" xml:space="preserve">
+    <value>INSERT INTO Team VALUES ('{0}', '{1}')</value>
+  </data>
   <data name="TEAM_LIST" xml:space="preserve">
     <value>select Team_name, Team_group, Team_id from Team</value>
+  </data>
+  <data name="UpdateTeam" xml:space="preserve">
+    <value>UPDATE Team SET Team_name = '{0}', Team_group = '{1}' where Team_id = '{2}'</value>
   </data>
 </root>

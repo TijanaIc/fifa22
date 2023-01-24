@@ -91,5 +91,23 @@ namespace Fifa22.Library.Repositories
 
             return result;
         }
+
+        public void DeletePlayer(int playerId)
+        {
+            string query = string.Format(PlayerQueries.DeletePlayer, playerId);
+            DataTable players = DatabaseConnection.ExecuteQuery(query);
+        }
+
+        public void InsertPlayers(Player p)
+        {
+            string query = string.Format(PlayerQueries.InsertPlayers, p.FirstName, p.LastName, p.GoalCount, p.TeamId);
+            DataTable players = DatabaseConnection.ExecuteQuery(query);
+        }
+
+        public void UpdatePlayer(Player p)
+        {
+            string query = string.Format(PlayerQueries.UpdatePlayer, p.FirstName, p.LastName, p.GoalCount, p.PlayerId);
+            DataTable players = DatabaseConnection.ExecuteQuery(query);
+        }
     }
 }

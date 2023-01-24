@@ -44,24 +44,23 @@ namespace Fifa22.WebService.Controllers
             return teams;
         }
 
-        //[HttpDelete("delete-by-id/{team_id}")]
-        //public void DeleteTeam(int team_id)
-        //{
-        //    DatabaseHelper.ExecuteQuery($"delete from Player where TeamId = '{team_id}'");
-        //    DatabaseHelper.ExecuteQuery($"delete from Team where Team_id = '{team_id}'");
-        //}
+        [HttpDelete("delete-by-id/{team_id}")]
+        public void DeleteTeam(int team_id)
+        {
+            TeamRepository.DeleteTeam(team_id);
+        }
 
-        //[HttpPut("update-by-id")]
-        //public void UpdateTeam(Team team)
-        //{
-        //    DatabaseHelper.ExecuteQuery($"UPDATE Team SET Team_name = '{team.Team_name}', Team_group = '{team.Team_group}' where Team_id = '{team.Team_id}'");
-        //}
+        [HttpPut("update-by-id")]
+        public void UpdateTeam(Team team)
+        {
+            TeamRepository.UpdateTeam(team);    
+        }
 
-        //[HttpPost("insert")]
-        //public void InsertTeam(Team team)
-        //{
-        //    DatabaseHelper.ExecuteQuery($"INSERT INTO Team VALUES ('{team.Team_name}', '{team.Team_group}')");
-        //}
+        [HttpPost("insert")]
+        public void InsertTeam(Team team)
+        {
+            TeamRepository.InsertTeam(team);
+        }
     }
 }
 
