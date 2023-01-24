@@ -1,18 +1,13 @@
 ﻿using Fifa22.Library.Resources;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fifa22.Library.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {
-        public DatabaseHelper DatabaseConnection { get; }
+        public IDbConnection DatabaseConnection { get; }
 
-        public PlayerRepository(DatabaseHelper databaseConnection)
+        public PlayerRepository(IDbConnection databaseConnection)
         {
             DatabaseConnection = databaseConnection;
         }
