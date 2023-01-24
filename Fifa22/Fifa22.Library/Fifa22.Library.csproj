@@ -12,10 +12,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Resources\DatabaseQueries.Designer.cs">
+	  <Compile Update="Resources\GroupQueries.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
-	    <DependentUpon>DatabaseQueries.resx</DependentUpon>
+	    <DependentUpon>GroupQueries.resx</DependentUpon>
 	  </Compile>
 	  <Compile Update="Resources\PlayerQueries.Designer.cs">
 	    <DesignTime>True</DesignTime>
@@ -30,9 +30,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Resources\DatabaseQueries.resx">
+	  <EmbeddedResource Update="Resources\GroupQueries.resx">
 	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>DatabaseQueries.Designer.cs</LastGenOutput>
+	    <LastGenOutput>GroupQueries.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\PlayerQueries.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>

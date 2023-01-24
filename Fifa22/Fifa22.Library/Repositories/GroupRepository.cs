@@ -15,7 +15,7 @@ namespace Fifa22.Library.Repositories
         public List<Group> GetGroups()
         {
             List<Group> groups = new List<Group>();
-            string query = DatabaseQueries.GROUP_LIST;
+            string query = GroupQueries.GROUP_LIST;
             DataTable tableGroups = DatabaseConnection.ExecuteQuery(query);
             foreach (DataRow row in tableGroups.Rows)
             {
