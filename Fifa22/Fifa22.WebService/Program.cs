@@ -1,5 +1,6 @@
 using Fifa22.Library;
 using Fifa22.Library.Repositories;
+using Fifa22.WebService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,6 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.RegisterMyFirstMiddleware();
 app.UseCors();
 app.UseAuthorization();
 
