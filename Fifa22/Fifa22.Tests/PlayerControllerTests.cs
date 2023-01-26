@@ -43,5 +43,14 @@ namespace Fifa22.Tests
             Assert.NotNull(players);
             Assert.True(24 == players.Count());
         }
+
+        [Fact]
+        public async Task GetPlayersFromTeam_Test()
+        {
+            var httpClient = _factory.CreateDefaultClient();
+            var players = await httpClient.GetFromJsonAsync<IEnumerable<PlayerEx>>("/player/search-by-team/1");
+            Assert.NotNull(players);
+            Assert.True(1 == players.Count());
+        }
     }
 }
