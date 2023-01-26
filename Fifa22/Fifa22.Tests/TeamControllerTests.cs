@@ -25,5 +25,32 @@ namespace Fifa22.Tests
             Assert.NotNull(teams);
             Assert.True(32 == teams.Count());
         }
+
+        [Fact]
+        public async Task GetTeamsByGroupName_Test()
+        {
+            var httpClient = _factory.CreateDefaultClient();
+            var teams = await httpClient.GetFromJsonAsync<IEnumerable<Team>>("/team/search-by-group/A");
+            Assert.NotNull(teams);
+            Assert.True(4 == teams.Count());
+        }
+
+        [Fact]
+        public async Task GetTeamById_Test()
+        {
+            var httpClient = _factory.CreateDefaultClient();
+            var teams = await httpClient.GetFromJsonAsync<IEnumerable<Team>>("/team/search-by-id/1");
+            Assert.NotNull(teams);
+            Assert.True(1 == teams.Count());
+        }
+
+        [Fact]
+        public async Task GetTeamByGoal_Test()
+        {
+            var httpClient = _factory.CreateDefaultClient();
+            var teams = await httpClient.GetFromJsonAsync<IEnumerable<Team>>("/team/search-by-goals/3");
+            Assert.NotNull(teams);
+            Assert.True(3 == teams.Count());
+        }
     }
 }
