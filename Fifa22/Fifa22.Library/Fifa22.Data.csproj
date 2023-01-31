@@ -10,38 +10,5 @@
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 		<PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Update="Resources\GroupQueries.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>GroupQueries.resx</DependentUpon>
-	  </Compile>
-	  <Compile Update="Resources\PlayerQueries.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>PlayerQueries.resx</DependentUpon>
-	  </Compile>
-	  <Compile Update="Resources\TeamQueries.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>TeamQueries.resx</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Update="Resources\GroupQueries.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>GroupQueries.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Resources\PlayerQueries.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>PlayerQueries.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Resources\TeamQueries.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>TeamQueries.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	</ItemGroup>
 	
 </Project>

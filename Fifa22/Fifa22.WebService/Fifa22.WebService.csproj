@@ -12,9 +12,9 @@
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
-
+	
   <ItemGroup>
-    <ProjectReference Include="..\Fifa22.Library\Fifa22.Data.csproj" />
+    <ProjectReference Include="..\Fifa22.Data.Sql\Fifa22.Data.Sql.csproj" />
   </ItemGroup>
 
 </Project>

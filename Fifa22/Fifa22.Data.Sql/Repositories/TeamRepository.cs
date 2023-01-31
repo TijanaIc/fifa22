@@ -1,7 +1,8 @@
-﻿using Fifa22.Data.Resources;
+﻿using Fifa22.Data.Repositories;
+using Fifa22.Data.Sql.Resources;
 using System.Data;
 
-namespace Fifa22.Data.Repositories
+namespace Fifa22.Data.Sql.Repositories
 {
     public class TeamRepository : ITeamRepository
     {

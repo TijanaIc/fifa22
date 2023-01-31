@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fifa22.Data.Resources {
+namespace Fifa22.Data.Sql.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Fifa22.Data.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fifa22.Data.Resources.PlayerQueries", typeof(PlayerQueries).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fifa22.Data.Sql.Resources.PlayerQueries", typeof(PlayerQueries).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
