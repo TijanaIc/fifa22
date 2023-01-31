@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.WebService", "Fifa22.WebService\Fifa22.WebService.csproj", "{9E4468C2-099C-4669-B3F3-4242A157FDD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data", "Fifa22.Library\Fifa22.Data.csproj", "{E394D8DD-257E-4847-8624-08DB919ACD17}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22", "Fifa22\Fifa22.csproj", "{6538AE74-DE1C-476B-BE8D-78126043C245}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClient", "WebClient", "{38A39C89-0F00-4C08-BA24-CC174C2CB47C}"
@@ -19,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Tests", "Fifa22.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Data.Sql", "Fifa22.Data.Sql\Fifa22.Data.Sql.csproj", "{5724ACF0-0620-4642-8251-08992D7A937E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data", "Fifa22.Data\Fifa22.Data.csproj", "{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +29,6 @@ Global
 		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E4468C2-099C-4669-B3F3-4242A157FDD9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E394D8DD-257E-4847-8624-08DB919ACD17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E394D8DD-257E-4847-8624-08DB919ACD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E394D8DD-257E-4847-8624-08DB919ACD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E394D8DD-257E-4847-8624-08DB919ACD17}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6538AE74-DE1C-476B-BE8D-78126043C245}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{5724ACF0-0620-4642-8251-08992D7A937E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5724ACF0-0620-4642-8251-08992D7A937E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5724ACF0-0620-4642-8251-08992D7A937E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
