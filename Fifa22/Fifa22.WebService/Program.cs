@@ -1,5 +1,5 @@
-using Fifa22.Library;
-using Fifa22.Library.Repositories;
+using Fifa22.Data;
+using Fifa22.Data.Repositories;
 using Fifa22.WebService;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Http.Json;
 
-namespace Fifa22.Library
+namespace Fifa22.Data
 {
     public class HttpClientHelper
     {

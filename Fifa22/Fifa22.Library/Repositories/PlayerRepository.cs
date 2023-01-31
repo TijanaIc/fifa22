@@ -1,7 +1,7 @@
-﻿using Fifa22.Library.Resources;
+﻿using Fifa22.Data.Resources;
 using System.Data;
 
-namespace Fifa22.Library.Repositories
+namespace Fifa22.Data.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {

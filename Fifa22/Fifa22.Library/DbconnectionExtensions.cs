@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Fifa22.Library
+namespace Fifa22.Data
 {
     public static class DbConnectionExtensions
     {

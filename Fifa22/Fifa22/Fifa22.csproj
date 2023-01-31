@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fifa22.Library\Fifa22.Library.csproj" />
+    <ProjectReference Include="..\Fifa22.Library\Fifa22.Data.csproj" />
   </ItemGroup>
 
 </Project>

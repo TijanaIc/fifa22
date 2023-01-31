@@ -1,4 +1,4 @@
-﻿namespace Fifa22.Library
+﻿namespace Fifa22.Data
 {
     public class Calculator
     {

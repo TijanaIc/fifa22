@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.WebService", "Fifa22.WebService\Fifa22.WebService.csproj", "{9E4468C2-099C-4669-B3F3-4242A157FDD9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Library", "Fifa22.Library\Fifa22.Library.csproj", "{E394D8DD-257E-4847-8624-08DB919ACD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data", "Fifa22.Library\Fifa22.Data.csproj", "{E394D8DD-257E-4847-8624-08DB919ACD17}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22", "Fifa22\Fifa22.csproj", "{6538AE74-DE1C-476B-BE8D-78126043C245}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClient", "WebClient", "{
 		Fifa.AngularJS\WebClient.html = Fifa.AngularJS\WebClient.html
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Tests", "Fifa22.Tests\Fifa22.Tests.csproj", "{A0DECF96-01E9-4974-99FA-96DA13B38625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Tests", "Fifa22.Tests\Fifa22.Tests.csproj", "{A0DECF96-01E9-4974-99FA-96DA13B38625}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
