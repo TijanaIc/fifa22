@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace Fifa22.Data
+﻿namespace Fifa22.Data
 {
     public class Team
     {

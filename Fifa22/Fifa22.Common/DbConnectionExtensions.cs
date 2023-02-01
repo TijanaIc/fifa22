@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Fifa22.Data
+namespace Fifa22.Common
 {
     public static class DbConnectionExtensions
     {
@@ -11,7 +11,7 @@ namespace Fifa22.Data
             IDbCommand cmd = dbConnection.CreateCommand();
             cmd.CommandText = query;
             dbConnection.Open();
-            System.Data.IDataReader dr = cmd.ExecuteReader(); 
+            IDataReader dr = cmd.ExecuteReader();
             dataTable.Load(dr);
             dbConnection.Close();
 

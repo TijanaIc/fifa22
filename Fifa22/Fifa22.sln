@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebClient", "WebClient", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Tests", "Fifa22.Tests\Fifa22.Tests.csproj", "{A0DECF96-01E9-4974-99FA-96DA13B38625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Data.Sql", "Fifa22.Data.Sql\Fifa22.Data.Sql.csproj", "{5724ACF0-0620-4642-8251-08992D7A937E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data.Sql", "Fifa22.Data.Sql\Fifa22.Data.Sql.csproj", "{5724ACF0-0620-4642-8251-08992D7A937E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data", "Fifa22.Data\Fifa22.Data.csproj", "{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Common", "Fifa22.Common\Fifa22.Common.csproj", "{1726E3F4-E97A-492E-84DD-D50D9313031F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using Fifa22.Data.Sql.Resources;
 using System.Data;
 using Fifa22.Data.Repositories;
+using Fifa22.Common;
 
 namespace Fifa22.Data.Sql.Repositories
 {

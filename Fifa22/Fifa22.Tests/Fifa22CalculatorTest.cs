@@ -5,7 +5,7 @@ namespace Fifa22.Tests
         [Fact]
         public void CalculatorSum_Test()
         {
-            int result = Fifa22.Data.Calculator.Sum(2, 3);
+            int result = Fifa22.Common.Calculator.Sum(2, 3);
             Assert.Equal(5, result);
             Assert.True(5 == result);
         }

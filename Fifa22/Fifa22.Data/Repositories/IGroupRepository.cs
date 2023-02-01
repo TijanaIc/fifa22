@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Fifa22.Data.Repositories
+﻿namespace Fifa22.Data.Repositories
 {
     public interface IGroupRepository
     {
