@@ -19,7 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data.Sql", "Fifa22.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Data", "Fifa22.Data\Fifa22.Data.csproj", "{55BF6434-DEBE-4BD8-B88C-FF9091600A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Common", "Fifa22.Common\Fifa22.Common.csproj", "{1726E3F4-E97A-492E-84DD-D50D9313031F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fifa22.Common", "Fifa22.Common\Fifa22.Common.csproj", "{1726E3F4-E97A-492E-84DD-D50D9313031F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0CD0C088-5EEE-458B-8752-E3829F2CE0A7}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\pipeline.yml = ..\.github\workflows\pipeline.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
