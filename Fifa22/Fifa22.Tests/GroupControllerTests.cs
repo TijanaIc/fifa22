@@ -13,13 +13,13 @@ namespace Fifa22.Tests
             _factory = new WebApplicationFactory<Program>();
         }
 
-        //[Fact]
-        //public async Task GroupNumber_Test()
-        //{
-        //    var httpClient = _factory.CreateDefaultClient();
-        //    var groups = await httpClient.GetFromJsonAsync<IEnumerable<Group>>("/group/list");
-        //    Assert.NotNull(groups);
-        //    Assert.True(8 == groups.Count());
-        //}
+        [Fact]
+        public async Task GroupNumber_Test()
+        {
+            var httpClient = _factory.CreateDefaultClient();
+            var groups = await httpClient.GetFromJsonAsync<IEnumerable<Group>>("/group/list");
+            Assert.NotNull(groups);
+            Assert.True(8 == groups.Count());
+        }
     }
 }
