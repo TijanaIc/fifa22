@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Fifa22/Fifa22.WebService/Fifa22.WebService.csproj
     - name: Build
-      run: dotnet build Fifa22.WebService/Fifa22.WebService.csproj --no-restore
+      run: dotnet build Fifa22/Fifa22.WebService/Fifa22.WebService.csproj --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
