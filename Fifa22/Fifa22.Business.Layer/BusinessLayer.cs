@@ -7,11 +7,13 @@ namespace Fifa22.Business.Layer
     {
         public IGroupRepository GroupRepository { get; }
         public ITeamRepository TeamRepository { get; }
+        public IPlayerRepository PlayerRepository { get; }
 
-        public BusinessLayer(IGroupRepository groupRepository, ITeamRepository teamRepository)
+        public BusinessLayer(IGroupRepository groupRepository, ITeamRepository teamRepository, IPlayerRepository playerRepository)
         {
             GroupRepository = groupRepository;
             TeamRepository = teamRepository;
+            PlayerRepository = playerRepository;
         }
         public List<Group> GetGroups()
         {
@@ -58,6 +60,45 @@ namespace Fifa22.Business.Layer
             TeamRepository.DeleteTeam(team_id);
         }
 
+        public List<Player> GetPlayers()
+        {
+            var players = PlayerRepository.GetPlayers();
+            return players;
+        }
+
+        public List<Player> GetPlayersFromTeam(int teamId)
+        {
+            var players = PlayerRepository.GetPlayersFromTeam(teamId);
+            return players;
+        }
+
+        public List<Player> GetTop5Players()
+        {
+            var players = PlayerRepository.GetTop5Players();
+            return players;
+        }
+
+        public List<PlayerEx> GetAllPlayersWithGoals()
+        {
+            var result = new List<PlayerEx>();
+            var players = PlayerRepository.GetAllPlayersWithGoals();
+            return players;
+        }
+
+        public void DeletePlayer(int playerId)
+        {
+            PlayerRepository.DeletePlayer(playerId);
+        }
+
+        public void InsertPlayers(Player p)
+        {
+            PlayerRepository.InsertPlayers(p);
+        }
+
+        public void UpdatePlayer(Player p)
+        {
+            PlayerRepository.UpdatePlayer(p);
+        }
     }
 }
 

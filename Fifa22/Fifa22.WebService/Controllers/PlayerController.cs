@@ -1,5 +1,5 @@
-﻿using Fifa22.Data;
-using Fifa22.Data.Repositories;
+﻿using Fifa22.Business.Layer;
+using Fifa22.Data;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -9,31 +9,31 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
-        public IPlayerRepository PlayerRepository { get; }
+        public IBusinessLayer BusinessLayer { get; }
 
-        public PlayerController(IPlayerRepository playerRepository)
+        public PlayerController(IBusinessLayer playerBusinessLayer)
         {
-            PlayerRepository = playerRepository;
+            BusinessLayer = playerBusinessLayer;
         }
 
         [HttpGet("list")]
         public List<Player> GetPlayers()
         {
-            var players = PlayerRepository.GetPlayers();
+            var players = BusinessLayer.GetPlayers();
             return players;
         }
 
         [HttpGet("search-by-team/{teamId}")]
         public List<Player> GetPlayersFromTeam(int teamId)
         {
-            var players = PlayerRepository.GetPlayersFromTeam(teamId);
+            var players = BusinessLayer.GetPlayersFromTeam(teamId);
             return players;            
         }
 
         [HttpGet("search-by-GoalCount")]
         public List<Player> GetTop5Players()
         {
-            var players = PlayerRepository.GetTop5Players();
+            var players = BusinessLayer.GetTop5Players();
             return players;
         }
         
@@ -41,27 +41,26 @@ namespace Fifa22.WebService.Controllers
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
-            var players = PlayerRepository.GetAllPlayersWithGoals();
+            var players = BusinessLayer.GetAllPlayersWithGoals();
             return players;
         }
 
         [HttpDelete("delete-by-id/{playerId}")]
         public void DeletePlayer(int playerId)
         {
-            PlayerRepository.DeletePlayer(playerId);
+            BusinessLayer.DeletePlayer(playerId);
         }
 
         [HttpPost("insert")]
         public void InsertPlayers(Player p)
         {
-            PlayerRepository.InsertPlayers(p);  
+            BusinessLayer.InsertPlayers(p);  
         }
 
         [HttpPut("update-by-id")]
         public void UpdatePlayer(Player p)
         {
-            PlayerRepository.UpdatePlayer(p);
+            BusinessLayer.UpdatePlayer(p);
         }
-
     }
 }
