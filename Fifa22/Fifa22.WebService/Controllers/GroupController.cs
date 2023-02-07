@@ -1,5 +1,5 @@
+using Fifa22.Business.Layer;
 using Fifa22.Data;
-using Fifa22.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fifa22.WebService.Controllers
@@ -8,17 +8,17 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class GroupController : ControllerBase
     {
-        public IGroupRepository GroupRepository { get; }
+        public IBusinessLayer BusinessLayer { get; }
 
-        public GroupController(IGroupRepository groupRepository)
+        public GroupController(IBusinessLayer groupBusinessLayer)
         {
-            GroupRepository = groupRepository;
+            BusinessLayer = groupBusinessLayer;
         }
 
         [HttpGet("list")]    
         public List<Group> Get()
         {
-            var groups = GroupRepository.GetGroups();
+            var groups = BusinessLayer.GetGroups();
             return groups;
         }
     }

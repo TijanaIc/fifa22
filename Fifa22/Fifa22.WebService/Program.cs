@@ -1,3 +1,4 @@
+using Fifa22.Business.Layer;
 using Fifa22.Data.Repositories;
 using Fifa22.Data.Sql.Repositories;
 using Fifa22.WebService;
@@ -9,6 +10,7 @@ builder.Services.AddScoped<System.Data.IDbConnection>(sp => new System.Data.SqlC
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+builder.Services.AddScoped<IBusinessLayer, BusinessLayer>();
 builder.Services.AddHttpClient();
 
 // Add services to the container.

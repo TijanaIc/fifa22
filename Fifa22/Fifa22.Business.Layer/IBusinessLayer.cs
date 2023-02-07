@@ -4,6 +4,6 @@ namespace Fifa22.Business.Layer
 {
     public interface IBusinessLayer
     {
-        public List<Group> GetGroups();
+        List<Group> GetGroups();
     }
 }
