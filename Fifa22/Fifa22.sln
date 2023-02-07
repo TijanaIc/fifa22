@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		..\.github\workflows\pipeline.yml = ..\.github\workflows\pipeline.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fifa22.Business.Layer", "Fifa22.Business.Layer\Fifa22.Business.Layer.csproj", "{649ACBD9-E659-4C7C-BF25-8B407F5F25DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1726E3F4-E97A-492E-84DD-D50D9313031F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649ACBD9-E659-4C7C-BF25-8B407F5F25DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649ACBD9-E659-4C7C-BF25-8B407F5F25DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649ACBD9-E659-4C7C-BF25-8B407F5F25DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649ACBD9-E659-4C7C-BF25-8B407F5F25DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
