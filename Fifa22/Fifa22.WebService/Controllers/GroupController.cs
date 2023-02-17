@@ -8,17 +8,17 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class GroupController : ControllerBase
     {
-        public IBusinessLayer BusinessLayer { get; }
+        public IGroupService GroupService { get; }
 
-        public GroupController(IBusinessLayer groupBusinessLayer)
+        public GroupController(IGroupService groupBusinessLayer)
         {
-            BusinessLayer = groupBusinessLayer;
+            GroupService = groupBusinessLayer;
         }
 
         [HttpGet("list")]    
         public List<Group> Get()
         {
-            var groups = BusinessLayer.GetGroups();
+            var groups = GroupService.GetGroups();
             return groups;
         }
     }

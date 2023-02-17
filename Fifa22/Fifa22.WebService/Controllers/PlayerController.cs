@@ -9,31 +9,31 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
-        public IBusinessLayer BusinessLayer { get; }
+        public IPlayerService PlayerService { get; }
 
-        public PlayerController(IBusinessLayer playerBusinessLayer)
+        public PlayerController(IPlayerService playerBusinessLayer)
         {
-            BusinessLayer = playerBusinessLayer;
+            PlayerService = playerBusinessLayer;
         }
 
         [HttpGet("list")]
         public List<Player> GetPlayers()
         {
-            var players = BusinessLayer.GetPlayers();
+            var players = PlayerService.GetPlayers();
             return players;
         }
 
         [HttpGet("search-by-team/{teamId}")]
         public List<Player> GetPlayersFromTeam(int teamId)
         {
-            var players = BusinessLayer.GetPlayersFromTeam(teamId);
+            var players = PlayerService.GetPlayersFromTeam(teamId);
             return players;            
         }
 
         [HttpGet("search-by-GoalCount")]
         public List<Player> GetTop5Players()
         {
-            var players = BusinessLayer.GetTop5Players();
+            var players = PlayerService.GetTop5Players();
             return players;
         }
         
@@ -41,26 +41,26 @@ namespace Fifa22.WebService.Controllers
         public List<PlayerEx> GetAllPlayersWithGoals()
         {
             var result = new List<PlayerEx>();
-            var players = BusinessLayer.GetAllPlayersWithGoals();
+            var players = PlayerService.GetAllPlayersWithGoals();
             return players;
         }
 
         [HttpDelete("delete-by-id/{playerId}")]
         public void DeletePlayer(int playerId)
         {
-            BusinessLayer.DeletePlayer(playerId);
+            PlayerService.DeletePlayer(playerId);
         }
 
         [HttpPost("insert")]
         public void InsertPlayers(Player p)
         {
-            BusinessLayer.InsertPlayers(p);  
+            PlayerService.InsertPlayers(p);  
         }
 
         [HttpPut("update-by-id")]
         public void UpdatePlayer(Player p)
         {
-            BusinessLayer.UpdatePlayer(p);
+            PlayerService.UpdatePlayer(p);
         }
     }
 }

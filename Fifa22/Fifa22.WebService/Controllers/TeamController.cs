@@ -1,6 +1,5 @@
 ﻿using Fifa22.Business.Layer;
 using Fifa22.Data;
-using Fifa22.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -10,57 +9,57 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class TeamController : Controller
     {
-        public IBusinessLayer BusinessLayer { get; }
+        public ITeamService TeamService { get; }
 
-        public TeamController(IBusinessLayer teamBusinessLayer)
+        public TeamController(ITeamService teamBusinessLayer)
         {
-            BusinessLayer = teamBusinessLayer;
+            TeamService = teamBusinessLayer;
         }
 
         [HttpGet("list")]
         public List<Team> Get()
         {
-            var teams = BusinessLayer.GetTeams();
+            var teams = TeamService.GetTeams();
             return teams;
         }
 
         [HttpGet("search-by-group/{groupName}")]
         public List<Team> GetTeams(string groupName)
         {
-            var teams = BusinessLayer.GetTeamByName(groupName);
+            var teams = TeamService.GetTeamByName(groupName);
             return teams;
         }
 
         [HttpGet("search-by-id/{teamId}")]
         public List<Team> GetTeamById(int teamId)
         {
-            var teams = BusinessLayer.GetTeamById(teamId);
+            var teams = TeamService.GetTeamById(teamId);
             return teams;
         }
 
         [HttpGet("search-by-goals/{top}")]
         public List<TeamEx> GetTeamByGoal(int top)
         {
-            var teams = BusinessLayer.GetTeamByGoal(top);
+            var teams = TeamService.GetTeamByGoal(top);
             return teams;
         }
 
         [HttpDelete("delete-by-id/{team_id}")]
         public void DeleteTeam(int team_id)
         {
-            BusinessLayer.DeleteTeam(team_id);
+            TeamService.DeleteTeam(team_id);
         }
 
         [HttpPut("update-by-id")]
         public void UpdateTeam(Team team)
         {
-            BusinessLayer.UpdateTeam(team);    
+            TeamService.UpdateTeam(team);    
         }
 
         [HttpPost("insert")]
         public void InsertTeam(Team team)
         {
-            BusinessLayer.InsertTeam(team);
+            TeamService.InsertTeam(team);
         }
     }
 }

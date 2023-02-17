@@ -10,7 +10,9 @@ builder.Services.AddScoped<System.Data.IDbConnection>(sp => new System.Data.SqlC
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
-builder.Services.AddScoped<IBusinessLayer, BusinessLayer>();
+builder.Services.AddScoped<IGroupService, GroupService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddHttpClient();
 
 // Add services to the container.
