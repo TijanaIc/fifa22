@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Fifa22.Common\Fifa22.Common.csproj" />
+	  <ProjectReference Include="..\Fifa22.Common\Fifa22.Library.csproj" />
 	</ItemGroup>
 	
 </Project>
