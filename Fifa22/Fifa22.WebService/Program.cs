@@ -2,9 +2,13 @@ using Fifa22.Business.Layer;
 using Fifa22.Data.Repositories;
 using Fifa22.Data.Sql.Repositories;
 using Fifa22.WebService;
-
+using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// NLog: Setup NLog for Dependency injection
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 builder.Services.AddScoped<System.Data.IDbConnection>(sp => new System.Data.SqlClient.SqlConnection(sp.GetRequiredService<IConfiguration>().GetConnectionString("FifaDatabase")));
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
