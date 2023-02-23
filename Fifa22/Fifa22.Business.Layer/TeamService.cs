@@ -5,7 +5,7 @@ namespace Fifa22.Business.Layer
 {
     public class TeamService : ITeamService
     {
-        public ITeamRepository TeamRepository { get; }
+        private readonly ITeamRepository TeamRepository;
 
         public TeamService(ITeamRepository teamRepository)
         {

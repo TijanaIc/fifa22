@@ -9,7 +9,7 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class TeamController : Controller
     {
-        public ITeamService TeamService { get; }
+        private readonly ITeamService TeamService;
 
         public TeamController(ITeamService teamBusinessLayer)
         {

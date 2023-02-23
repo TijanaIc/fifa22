@@ -5,7 +5,7 @@ namespace Fifa22.Business.Layer
 {
     public class PlayerService : IPlayerService
     {
-        public IPlayerRepository PlayerRepository { get; }
+        private readonly IPlayerRepository PlayerRepository;
 
         public PlayerService(IPlayerRepository playerRepository)
         {

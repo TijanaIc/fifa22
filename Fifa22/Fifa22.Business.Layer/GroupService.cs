@@ -5,7 +5,7 @@ namespace Fifa22.Business.Layer
 {
     public class GroupService : IGroupService
     {
-        public IGroupRepository GroupRepository { get; }
+        private readonly IGroupRepository GroupRepository;
 
         public GroupService(IGroupRepository groupRepository)
         {

@@ -9,7 +9,7 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class PlayerController : Controller
     {
-        public IPlayerService PlayerService { get; }
+        private readonly IPlayerService PlayerService;
 
         public PlayerController(IPlayerService playerBusinessLayer)
         {

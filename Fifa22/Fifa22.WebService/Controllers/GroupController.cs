@@ -8,8 +8,8 @@ namespace Fifa22.WebService.Controllers
     [Route("[controller]")]
     public class GroupController : ControllerBase
     {
-        public IGroupService GroupService { get; }
-        public ILogger<GroupController> Logger { get; }
+        private readonly IGroupService GroupService;
+        private readonly ILogger<GroupController> Logger;
 
         public GroupController(IGroupService groupBusinessLayer, ILogger<GroupController> logger)
         {
