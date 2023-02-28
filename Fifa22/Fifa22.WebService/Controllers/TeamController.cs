@@ -10,16 +10,20 @@ namespace Fifa22.WebService.Controllers
     public class TeamController : Controller
     {
         private readonly ITeamService TeamService;
+        private readonly ILogger<TeamController> Logger;
 
-        public TeamController(ITeamService teamBusinessLayer)
+        public TeamController(ITeamService teamBusinessLayer, ILogger<TeamController> logger)
         {
             TeamService = teamBusinessLayer;
+            Logger = logger;
         }
 
         [HttpGet("list")]
         public List<Team> Get()
         {
+            Logger.LogInformation("Getting list of groups started.");
             var teams = TeamService.GetTeams();
+            Logger.LogInformation("Getting list of groups finished.");
             return teams;
         }
 

@@ -10,16 +10,19 @@ namespace Fifa22.WebService.Controllers
     public class PlayerController : Controller
     {
         private readonly IPlayerService PlayerService;
+        private readonly ILogger<PlayerController> Logger;
 
-        public PlayerController(IPlayerService playerBusinessLayer)
+        public PlayerController(IPlayerService playerBusinessLayer, ILogger<PlayerController> logger)
         {
             PlayerService = playerBusinessLayer;
+            Logger = logger;
         }
 
         [HttpGet("list")]
         public List<Player> GetPlayers()
         {
             var players = PlayerService.GetPlayers();
+            Logger.LogInformation($"{players.Count} players");
             return players;
         }
 
