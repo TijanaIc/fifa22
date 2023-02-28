@@ -1,7 +1,7 @@
 ﻿using Fifa22.Data;
 using Fifa22.Data.Repositories;
 
-namespace Fifa22.Business.Layer
+namespace Fifa22.Business.Layer.Players
 {
     public class PlayerService : IPlayerService
     {

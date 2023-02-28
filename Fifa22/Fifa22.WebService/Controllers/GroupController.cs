@@ -1,4 +1,4 @@
-using Fifa22.Business.Layer;
+using Fifa22.Business.Layer.Groups;
 using Fifa22.Data;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,6 +1,6 @@
 ﻿using Fifa22.Data;
 
-namespace Fifa22.Business.Layer
+namespace Fifa22.Business.Layer.Players
 {
     public interface IPlayerService
     {

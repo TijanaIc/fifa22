@@ -1,4 +1,6 @@
-using Fifa22.Business.Layer;
+using Fifa22.Business.Layer.Groups;
+using Fifa22.Business.Layer.Players;
+using Fifa22.Business.Layer.Teams;
 using Fifa22.Data.Repositories;
 using Fifa22.Data.Sql.Repositories;
 using Fifa22.WebService;
