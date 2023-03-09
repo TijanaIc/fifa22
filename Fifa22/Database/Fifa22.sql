@@ -22,9 +22,6 @@ GoalCount int,
 TeamId int FOREIGN KEY REFERENCES Team(Team_id)
 );
 
-create view [dbo].[PlayerEx]
-as
-select Player.*, Team.Team_name, Team.Team_group from Player inner join Team on Player.Teamid = Team.Team_id
 
 select * from Player;
 
